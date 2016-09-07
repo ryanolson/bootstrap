@@ -13,11 +13,11 @@ sudo apt-get update
 sudo apt-get -y install ansible
 
 # Add nvidia-docker role from Ansible Galaxy
-ansible-galaxy install ryanolson.nvidia-docker
+ansible-galaxy install ryanolson.nvidia-docker --roles-path=/tmp/roles
 
 # Write playbook
 playbook=$(mktemp)
-cat <<EOF > $f
+cat <<EOF > $playbook
 - hosts: all
   roles:
     - role: 'ryanolson.nvidia-docker'
