@@ -22,9 +22,6 @@ cat <<EOF > $playbook
   roles:
     - role: 'ryanolson.nvidia-docker'
       become: true
-  tasks:
-    - name: docker | add user to docker group
-      user: name=$USER groups=docker append=yes become=true
 EOF
 
 # Execute playbook
