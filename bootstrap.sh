@@ -22,6 +22,8 @@ cat <<EOF > $playbook
   roles:
     - role: 'ryanolson.nvidia-docker'
       become: true
+      docker_users:
+        - "{{ ansible_user_id }}"
 EOF
 
 # Execute playbook
